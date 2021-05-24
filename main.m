@@ -5,7 +5,7 @@
 %   spectra, the mean colour difference and the mean root mean square difference
 %   of each test set.  
 %   
-%   author:          © Tanzima Habib
+%   author:          Â© Tanzima Habib
 %   version:         1.1
 %   date:  	         1-05-2021
 %
@@ -73,7 +73,7 @@ for i = 1:5
     % APPLY THE SPECTRAL ESTIMATION METHOD
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    ref_wpseudoInv = wpseudoInv(training', xyz_ts, illuminant', cmf');
+    ref_wpseudoInv = wpseudoInv(test, training, illuminant, cmf);
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Calculate Colour Difference Delta E2000
