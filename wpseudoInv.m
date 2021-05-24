@@ -2,14 +2,14 @@
 %
 %   Example:
 %   S = wpseudoInv(test, training, illuminant, cmf)
-%
+%   If traning data, illuminant and cmf is not supplied then default data will be used. 
 %   Spectral Estimation using Weighted Pseudo Inverse method (Reference Paper: Babaei, V., Amirshahi, S.H. and Agahian, F., 2011. Using weighted pseudo?inverse method 
 %                                                             ...for reconstruction of reflectance spectra and analyzing the dataset in terms of normality. Color Research & Application, 36(4), pp.295-305.)
 %   author:          © Tanzima Habib
 %   version:         1.1
 %   date:  	         1-05-2021
 %########################################################################################################################################################
-% S = estimated spectra, training=training reflectances ,  test = test tristimulus values
+% S = estimated spectra, training = training reflectances ,  test = test tristimulus values
 % illuminant = illuminant D50, cmf = CIE 1931 2 degree observer
 %Set training = 0 to use default training reflectance.
 %########################################################################################################################################################
