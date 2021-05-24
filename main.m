@@ -65,7 +65,7 @@ for i = 1:K
     training = [division{elem(1)};division{elem(2)};division{elem(3)};division{elem(4)}];
    
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Creatte the tristimulus values
+    % Calculate the tristimulus values
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     k = 100 / sum(cmf(:,2).*illuminant);
     xyz_ts = (k .* cmf' * diag(illuminant) * test');
@@ -91,6 +91,10 @@ for i = 1:K
     
     rmsd = rootMeanSquareDifference(test, ref_wpseudoInv);
     wpseudoInv_res(i,4) = rmsd;
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Plot test and estimated spectra
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     figure(i);
     for k = 1:size(test,1)
         plot(test(k,:),'linewidth',2); hold on;
