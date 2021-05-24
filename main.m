@@ -40,7 +40,8 @@ pathname = 'reflectance_database\';
 file = load(strcat(pathname, fname,'.mat'), fname);
 reflectances = file.(fname);
 [sno,range] = size(reflectances);
-
+cmf = twoDegObs;
+illuminant = d50;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Prepare reflectance sets for K-cross validation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,7 +74,7 @@ for i = 1:5
     % APPLY THE SPECTRAL ESTIMATION METHOD
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
-    ref_wpseudoInv = wpseudoInv(test, training, illuminant, cmf);
+    ref_wpseudoInv = wpseudoInv(xyz_ts, training, illuminant, cmf);
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Calculate Colour Difference Delta E2000
