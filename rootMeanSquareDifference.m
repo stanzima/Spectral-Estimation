@@ -2,10 +2,10 @@
 %   returns rmsd.
 %
 %   Example:
-%   RMSD = rootMeanSquareError(R_test, R_est)
+%   RMSD = rootMeanSquareDifference(R_test, R_est)
 %
 %   
-%   author:          © Tanzima Habib
+%   author:          Â© Tanzima Habib
 %   version:         1.1
 %   date:  	         1-05-2021
 %########################################################################################################################################################
