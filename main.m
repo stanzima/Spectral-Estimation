@@ -58,7 +58,7 @@ index = randperm(sno);
 % Spectral estmation main 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-for i = 1:5
+for i = 1:K
     test =  division{i};
     elem = (1:5);
     elem(i) = []; 
