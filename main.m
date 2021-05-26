@@ -30,7 +30,7 @@ K =5; %Set cross validation set number
 
 testsets = cell(K, 1); % Stores reference spectra of each test set
 estimated_spectra = cell(K, 1);% Stores estimated spectra of each test set
-wpseudoInv_res = zeros(K,4);% Stores Average Colour Difference, Max Colour Difference, Min Colour Diference, RMSD of each test sets
+wpseudoInv_res = zeros(K,4);% Stores Average Colour Difference, 95 percentile of Colour Difference, Min Colour Diference, RMSD of each test sets
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Load data
