@@ -1,3 +1,4 @@
+function S = wpseudoInv(test, training, illuminant, cmf)
 %   This function applies weighted pseudo inverse method for spectral estimation from colorimetry and returns estimated spectra
 %
 %   Example:
@@ -11,13 +12,11 @@
 %########################################################################################################################################################
 % S = estimated spectra, training = training reflectances ,  test = test tristimulus values
 % illuminant = illuminant D50, cmf = CIE 1931 2 degree observer
-%Set training = 0 to use default training reflectance.
+% Set training = 0 to use default training reflectance.
 %########################################################################################################################################################
 % Note: Training reflectance, cmf and illuminant matrices should have rows
 % as wavelength and xyz_ts matrix should have rows as three tristimulus co-ordinates
 %########################################################################################################################################################
-
-function S = wpseudoInv(test, training, illuminant, cmf)
     
     %Use default training data, illuminant and cmf
     if nargin < 4
