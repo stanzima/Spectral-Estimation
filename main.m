@@ -28,6 +28,7 @@ K =5; %Set cross validation set number
 % Set output variables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+testsets = []; % Stores reference spectra of each test set
 estimated_spectra = [];% Stores estimated spectra of each test set
 wpseudoInv_res = zeros(K,4);% Stores Average Colour Difference, Max Colour Difference, Min Colour Diference, RMSD of each test sets
 
@@ -107,5 +108,15 @@ for i = 1:K
     title(strcat('Result of Test set with K=',num2str(i),' and RMSD=',num2str(rmsd)));
     hold off;
     
-    estimated_spectra   = [estimated_spectra; ref_wpseudoInv];
+    if  isempty( testsets )
+        testsets = test;
+    else
+        testsets = cat(3, testsets, test);
+    end
+    
+    if  isempty( ref_wpseudoInv )
+        estimated_spectra = ref_wpseudoInv;
+    else
+        estimated_spectra   = cat(3,estimated_spectra, ref_wpseudoInv);
+    end
 end
